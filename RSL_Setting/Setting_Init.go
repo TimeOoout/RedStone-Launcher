@@ -8,6 +8,7 @@ import (
 )
 
 func InitSettings() {
+
 	if _, iSErrA := os.Stat(ConfigPath); iSErrA != nil {
 		if os.IsNotExist(iSErrA) {
 			fileContent, err := json.Marshal(DefaultConfig)
