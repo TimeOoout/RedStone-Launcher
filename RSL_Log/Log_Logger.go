@@ -73,9 +73,15 @@ func initLogger() error {
 func LogInfo(format string, args ...interface{}) {
 	if inited == false {
 		if args != nil {
-			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Info] "+strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1)+" | "+format, args)
 		} else {
-			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Info] " + strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1) + " | " + format)
 		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
@@ -110,9 +116,15 @@ func LogInfo(format string, args ...interface{}) {
 func LogWarning(format string, args ...interface{}) {
 	if inited == false {
 		if args != nil {
-			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Warning] "+strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1)+" | "+format, args)
 		} else {
-			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Warning] " + strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1) + " | " + format)
 		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
@@ -147,9 +159,15 @@ func LogWarning(format string, args ...interface{}) {
 func LogError(format string, args ...interface{}) {
 	if inited == false {
 		if args != nil {
-			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Error] "+strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1)+" | "+format, args)
 		} else {
-			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Error] " + strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1) + " | " + format)
 		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
@@ -184,9 +202,15 @@ func LogError(format string, args ...interface{}) {
 func LogDebug(format string, args ...interface{}) {
 	if inited == false {
 		if args != nil {
-			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Debug] "+strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1)+" | "+format, args)
 		} else {
-			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+			PrintWarning("Logger not initialized!\n -- Original information:\n -- [Debug] " + strings.Replace(
+				strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+					" ", "_", 1),
+				":", "-", -1) + " | " + format)
 		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()

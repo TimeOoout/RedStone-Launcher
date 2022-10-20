@@ -8,6 +8,6 @@ func msgExample() {
 
 func msgInfoInitLogger(err string) {
 	if AutoMsg == true {
-		PrintError("Unable to init Logger! Error:%s", err)
+		PrintWarning("Unable to init Logger! Error:%s", err)
 	}
 }
