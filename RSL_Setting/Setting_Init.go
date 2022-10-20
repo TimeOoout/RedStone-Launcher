@@ -1,31 +1,34 @@
 package RSL_Setting
 
 import (
+	"RedStoneLauncher/RSL_Log"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
+	"os"
 )
 
 func InitSettings() {
-	readSettings()
-}
-
-func readSettings() {
-	fileContent, err := json.Marshal(DefaultConfig)
-	println(fileContent)
-	if err = ioutil.WriteFile(ConfigPath, fileContent, 0666); err != nil {
-		fmt.Println("Writefile Error =", err)
-		return
+	if _, iSErrA := os.Stat(ConfigPath); iSErrA != nil {
+		if os.IsNotExist(iSErrA) {
+			fileContent, err := json.Marshal(DefaultConfig)
+			if err = ioutil.WriteFile(ConfigPath, fileContent, 0666); err != nil {
+				RSL_Log.LogWarning(err.Error())
+			} else {
+				RSL_Log.LogInfo("Successfully init settings!")
+			}
+			CurrentConfig = DefaultConfig
+			return
+		}
 	}
 	//读取文件
-	fileContent, err = ioutil.ReadFile(ConfigPath)
+	fileContent, err := ioutil.ReadFile(ConfigPath)
 	if err != nil {
-		fmt.Println("Read file err =", err)
+		RSL_Log.LogWarning(err.Error())
 		return
 	}
 	if err := json.Unmarshal(fileContent, &CurrentConfig); err != nil {
-		fmt.Println("Read file error =", err)
+		RSL_Log.LogWarning(err.Error())
 	} else {
-		fmt.Println("Read file success =", CurrentConfig)
+		RSL_Log.LogInfo("Successfully init settings!")
 	}
 }
