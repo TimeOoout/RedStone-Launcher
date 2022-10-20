@@ -47,7 +47,7 @@ func ClearLogs() error {
 }
 
 func GetVersion() {
-	LogInfo("RSL_Log version:%s", version)
+	PrintInfo("RSL_Log version:%s", version)
 }
 
 func initLogger() error {
@@ -72,7 +72,11 @@ func initLogger() error {
 
 func LogInfo(format string, args ...interface{}) {
 	if inited == false {
-		PrintError("Logger not initialized!")
+		if args != nil {
+			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+		} else {
+			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
 		encode.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -105,7 +109,11 @@ func LogInfo(format string, args ...interface{}) {
 
 func LogWarning(format string, args ...interface{}) {
 	if inited == false {
-		PrintError("Logger not initialized!")
+		if args != nil {
+			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+		} else {
+			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
 		encode.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -138,7 +146,11 @@ func LogWarning(format string, args ...interface{}) {
 
 func LogError(format string, args ...interface{}) {
 	if inited == false {
-		PrintError("Logger not initialized!")
+		if args != nil {
+			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+		} else {
+			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
 		encode.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -171,7 +183,11 @@ func LogError(format string, args ...interface{}) {
 
 func LogDebug(format string, args ...interface{}) {
 	if inited == false {
-		PrintError("Logger not initialized!")
+		if args != nil {
+			PrintWarning("Logger not initialized!\nOriginal information:"+format, args)
+		} else {
+			PrintWarning("Logger not initialized!\nOriginal information:" + format)
+		}
 	} else {
 		encode := zap.NewProductionEncoderConfig()
 		encode.EncodeTime = zapcore.ISO8601TimeEncoder
