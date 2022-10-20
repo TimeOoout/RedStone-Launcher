@@ -31,6 +31,7 @@ type LauncherSettings struct {
 	GameDir  interface{}      `json:"gameDir"`
 	Config   config           `json:"config"`
 	Download downloadSettings `json:"download"`
+	Player   interface{}      `json:"player"`
 	AutoLog  bool             `json:"autoLog"`
 	About    aboutInfo        `json:"about"`
 }
