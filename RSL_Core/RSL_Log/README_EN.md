@@ -60,12 +60,7 @@
 > Modify it to output the log file to a different path.
 
 ### Automation settings
-* AutoLogging = true
-> Automatically output some logs included in the package. \
-> **(Opening is not recommended in other projects)**
-* AutoMsg = true
-> Automatically output some information contained in the package. \
-> **(As in the previous one, it is not recommended to open it in other projects)**
+
 * LogtoConsole = true
 > Output the information written to the log file **to the console at the same time**.
 
