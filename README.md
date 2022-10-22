@@ -7,4 +7,4 @@
 
 
 * 基于Golang的新一代MineCraft启动器！ 
-  * 同时也是[红石皮肤站](https://mcskin.cn)的客户端。
+  * 同时也是[下一站-红石皮肤站](https://github.com/redstone-skin/skin-server-next)的客户端。
