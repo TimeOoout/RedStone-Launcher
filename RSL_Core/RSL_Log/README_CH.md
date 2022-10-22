@@ -5,7 +5,9 @@
 >
 
 * 一个基于Zap二次封装的日志记录包。
-* 主要用于RedStone Launcher的开发，当然也可以用于开发其它应用。
+* 主要用于RedStone Launcher的开发
+
+> 当然也可以用于开发其它应用。
 
 #### 最新版本: [1.0.0_beta](#latest-version-100_beta)
 
