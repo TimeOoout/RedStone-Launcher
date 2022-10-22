@@ -47,7 +47,10 @@ func ClearLogs() error {
 }
 
 func GetVersion() {
-	PrintInfo("RSL_Log version:%s", version)
+	PrintInfo(strings.Replace(
+		strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
+			" ", "_", 1),
+		":", "-", -1)+"RSL_Log version:%s", version)
 }
 
 func initLogger() error {

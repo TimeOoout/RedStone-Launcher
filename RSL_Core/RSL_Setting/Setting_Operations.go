@@ -1,7 +1,7 @@
 package RSL_Setting
 
 import (
-	"RedStoneLauncher/RSL_Log"
+	"RedStoneLauncher/RSL_Core/RSL_Log"
 	"encoding/json"
 	"io/ioutil"
 )
