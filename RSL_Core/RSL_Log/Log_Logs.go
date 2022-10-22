@@ -1,15 +1,10 @@
 package RSL_Log
 
-/*Log_Logger.go - LauncherInitLogger */
-
+// name: log-Info-InitLogger
 func logExample() {
-	if AutoLogging == true {
-		//Statements.
-	}
+	//Statements.
 }
 
 func logInfoInitLogger() {
-	if AutoLogging == true {
-		LogInfo(LogObj + "Init Logger successfully!")
-	}
+	LogInfo(LogObj + "Init Logger successfully!")
 }
