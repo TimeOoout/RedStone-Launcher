@@ -10,6 +10,6 @@ func logExample() {
 
 func logInfoInitLogger() {
 	if AutoLogging == true {
-		LogInfo("Init Logger successfully!")
+		LogInfo(LogObj + "Init Logger successfully!")
 	}
 }

@@ -13,3 +13,4 @@ var AutoMsg = true
 var LogtoConsole = true
 var inited = false
 var version = "1.0.0_beta"
+var LogObj = "Log    : "
