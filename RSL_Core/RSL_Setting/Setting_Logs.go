@@ -16,13 +16,13 @@ func logInfoGetSetting() {
 }
 
 func logWarningInitSettings(s string) {
-	RSL_Log.LogInfo(LogObj + "Failed to init settings!   Error: " + s)
+	RSL_Log.LogInfo(LogObj + "Failed to init settings! The default settings will be used.    Error: " + s)
 }
 
 func logWarningGetSettings(s string) {
-	RSL_Log.LogInfo(LogObj + "Failed to get settings!   Error: " + s)
+	RSL_Log.LogInfo(LogObj + "Failed to get settings! The current settings will continue to be used.   Error: " + s)
 }
 
 func logWarningSetSettings(s string) {
-	RSL_Log.LogInfo(LogObj + "Failed to set settings!   Error: " + s)
+	RSL_Log.LogInfo(LogObj + "Failed to set settings! All changes will not be saved.   Error: " + s)
 }

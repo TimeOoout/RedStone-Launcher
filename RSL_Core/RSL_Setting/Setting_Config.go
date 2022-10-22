@@ -94,7 +94,11 @@ var DefaultConfig = LauncherConfig{
 			//下载模式，0为官方，1为BMCL，2为MCBBS（推荐），3为自定义源
 			Mod: 2,
 		},
-		AutoLog: true,
+		Log: log{
+			AutoLog:      true,
+			AutoClearLog: true,
+			RemainLogs:   3,
+		},
 		About: aboutInfo{
 			Version: "0.1.1_Alpha",
 			Url:     "https://mcskin.cn/",

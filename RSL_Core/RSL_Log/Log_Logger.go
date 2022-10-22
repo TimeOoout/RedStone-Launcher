@@ -9,17 +9,27 @@ import (
 	"time"
 )
 
-func InitLauncherLogger() {
+func InitLauncherLogger() error {
 	initLoggerError := initLogger()
 	if initLoggerError != nil {
 		msgInfoInitLogger(initLoggerError.Error())
+		return initLoggerError
 	} else {
 		inited = true
 		logInfoInitLogger()
+		return nil
 	}
 }
 
-func ClearLogs() error {
+func ClearLogs(remain ...int) error {
+	lengh := 3
+	if remain != nil {
+		if remain[0] >= 1 {
+			lengh = remain[0]
+		} else {
+			logWarningClearLogArgs(remain[0])
+		}
+	}
 	// 读取当前目录中的所有文件和子目录
 	files, err := ioutil.ReadDir(LogFolder)
 	if err != nil {
@@ -29,12 +39,13 @@ func ClearLogs() error {
 	length := len(files)
 	current := 0
 	for _, file := range files {
-		if length > 3 {
+		if length > lengh {
 			if file.Name()[len(file.Name())-4:len(file.Name())] == ".log" {
 				current++
-				if current <= length-3 {
+				if current <= length-lengh {
 					err = os.Remove(LogFolder + file.Name())
 					if err != nil {
+						logWarningClearLog(err)
 						return err
 					}
 				}
@@ -42,15 +53,23 @@ func ClearLogs() error {
 		}
 
 	}
-
+	logInfoClearLog()
 	return nil
 }
 
-func GetVersion() {
+func PrintVersion() {
 	PrintInfo(strings.Replace(
 		strings.Replace(time.Now().Format("2006-01-02 15:04:05")+" | ",
 			" ", "_", 1),
 		":", "-", -1)+LogObj+"RSL_Log version:%s", version)
+}
+
+func LogVersion() {
+	LogInfo(LogObj+"RSL_Log version:	%s", version)
+}
+
+func GetVersion() string {
+	return version
 }
 
 func initLogger() error {

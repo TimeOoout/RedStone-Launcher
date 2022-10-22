@@ -32,8 +32,14 @@ type LauncherSettings struct {
 	Player   interface{}      `json:"player"`
 	Config   config           `json:"config"`
 	Download downloadSettings `json:"download"`
-	AutoLog  bool             `json:"autoLog"`
+	Log      log              `json:"log"`
 	About    aboutInfo        `json:"about"`
+}
+
+type log struct {
+	AutoLog      bool `json:"autoLog"`
+	AutoClearLog bool `json:"autoClearLog"`
+	RemainLogs   int  `json:"remainLogs"`
 }
 
 type gameDir struct {

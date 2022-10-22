@@ -6,28 +6,31 @@ import (
 	"os"
 )
 
-func InitSettings() {
+func InitSettings() error {
 	if _, iSErrA := os.Stat(ConfigPath); iSErrA != nil {
 		if os.IsNotExist(iSErrA) {
 			fileContent, err := json.Marshal(DefaultConfig)
 			if err = ioutil.WriteFile(ConfigPath, fileContent, 0666); err != nil {
 				logWarningInitSettings(err.Error())
+				return err
 			} else {
 				logInfoInitSetting()
 			}
 			CurrentConfig = DefaultConfig
-			return
+			return nil
 		}
 	}
 	//读取文件
 	fileContent, err := ioutil.ReadFile(ConfigPath)
 	if err != nil {
 		logWarningInitSettings(err.Error())
-		return
+		return err
 	}
 	if err := json.Unmarshal(fileContent, &CurrentConfig); err != nil {
 		logWarningInitSettings(err.Error())
+		return err
 	} else {
 		logInfoInitSetting()
 	}
+	return nil
 }
