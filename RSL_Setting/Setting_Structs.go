@@ -29,11 +29,19 @@ type profileProperties struct {
 type LauncherSettings struct {
 	JavaList interface{}      `json:"javaList"`
 	GameDir  interface{}      `json:"gameDir"`
+	Player   interface{}      `json:"player"`
 	Config   config           `json:"config"`
 	Download downloadSettings `json:"download"`
-	Player   interface{}      `json:"player"`
 	AutoLog  bool             `json:"autoLog"`
 	About    aboutInfo        `json:"about"`
+}
+
+type gameDir struct {
+	Path        string `json:"path"`
+	DisplayName string `json:"displayName"`
+}
+
+type playerInfo struct {
 }
 
 type config struct {

@@ -31,6 +31,8 @@ var DefaultConfig = LauncherConfig{
 		JavaList: nil,
 		//所有游戏路径
 		GameDir: nil,
+		//用户设置
+		Player: nil,
 		//游戏设置
 		Config: config{
 			//全局设置
@@ -97,7 +99,6 @@ var DefaultConfig = LauncherConfig{
 			//下载模式，0为官方，1为BMCL，2为MCBBS（推荐），3为自定义源
 			Mod: 2,
 		},
-		Player:  nil,
 		AutoLog: true,
 		About: aboutInfo{
 			Version: "0.1.1_Alpha",
