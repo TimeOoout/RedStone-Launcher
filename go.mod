@@ -7,6 +7,9 @@ require (
 	go.uber.org/zap v1.23.0
 )
 
+
+replace github.com/timeooout/RSL_Log => .\RSL_Log
+
 require (
 	github.com/mattn/go-colorable v0.1.9 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
