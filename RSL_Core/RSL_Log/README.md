@@ -9,13 +9,13 @@
 
 > 当然也可以用于开发其它应用。
 
-#### 最新版本: [1.0.0_beta](#latest-version-100_beta)
+#### 最新版本: [v0.1.0_beta](#latest-version-100_beta)
 
 > For English documents, see [RSL_ Log Package Documentation](README_EN.md)
 
 ### 目录
 - [RSL_ Log 中文文档](#rsl_-log-中文文档)
-      - [最新版本: 1.0.0_beta](#最新版本-100_beta)
+      - [最新版本: v0.1.0_beta](#最新版本-v010_beta)
     - [目录](#目录)
   - [函数](#函数)
     - [文件操作](#文件操作)
