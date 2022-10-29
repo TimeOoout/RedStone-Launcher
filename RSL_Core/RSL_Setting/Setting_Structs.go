@@ -25,7 +25,7 @@ type profileProperties struct {
 	UploadableTextures string `json:"uploadableTextures"`
 }
 
-/*启动器设置*/
+// LauncherSettings 启动器设置
 type LauncherSettings struct {
 	JavaList interface{}      `json:"javaList"`
 	GameDir  interface{}      `json:"gameDir"`
