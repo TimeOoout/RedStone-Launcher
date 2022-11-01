@@ -1,6 +1,6 @@
 package RSL_Setting
 
-import "RedStoneLauncher/RSL_Core/RSL_Log"
+import "github.com/TimeOoout/RSL_Core/RSL_Log"
 
 // name: log-Info-InitLogger
 func logExample() {

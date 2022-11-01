@@ -1,7 +1,7 @@
 package main
 
 import (
-	"RedStoneLauncher/RSL_Core"
+	"github.com/TimeOoout/RSL_Core"
 )
 
 func main() {

@@ -7,8 +7,9 @@ require (
 	go.uber.org/zap v1.23.0
 )
 
+require github.com/TimeOoout/RSL_Core v0.1.0
 
-replace github.com/timeooout/RSL_Log => .\RSL_Log
+replace github.com/TimeOoout/RSL_Core => ./RSL_Core
 
 require (
 	github.com/mattn/go-colorable v0.1.9 // indirect
