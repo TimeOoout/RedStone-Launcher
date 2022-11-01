@@ -3,8 +3,8 @@ module RedStoneLauncher
 go 1.19
 
 require (
-	github.com/fatih/color v1.13.0
-	go.uber.org/zap v1.23.0
+	github.com/fatih/color v1.13.0 // indirect
+	go.uber.org/zap v1.23.0 // indirect
 )
 
 require github.com/TimeOoout/RSL_Core v0.1.0
