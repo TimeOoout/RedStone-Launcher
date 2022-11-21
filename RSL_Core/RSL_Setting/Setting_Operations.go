@@ -6,7 +6,7 @@ import (
 )
 
 func GetSettings() {
-	fileContent, err := ioutil.ReadFile(ConfigPath)
+	fileContent, err := ioutil.ReadFile(ConfigName)
 	if err != nil {
 		logWarningGetSettings(err.Error())
 		return
@@ -20,7 +20,7 @@ func GetSettings() {
 
 func SetSettings() {
 	fileContent, err := json.Marshal(DefaultConfig)
-	if err = ioutil.WriteFile(ConfigPath, fileContent, 0666); err != nil {
+	if err = ioutil.WriteFile(ConfigName, fileContent, 0666); err != nil {
 		logWarningSetSettings(err.Error())
 	} else {
 		logInfoGetSetting()

@@ -1,8 +1,9 @@
 package RSL_Player
 
-// Players  所有用户
-type Users struct {
-	Info interface{}
+// Player  单个玩家信息
+type Player struct {
+	File string   `json:"file"`
+	Info UserInfo `json:"info"`
 }
 
 // UserInfo 用户信息

@@ -9,6 +9,7 @@ import (
 func InitSettings() error {
 	if _, iSErrA := os.Stat(ConfigPath); iSErrA != nil {
 		if os.IsNotExist(iSErrA) {
+			os.MkdirAll(ConfigFolder, 7777)
 			fileContent, err := json.Marshal(DefaultConfig)
 			if err = ioutil.WriteFile(ConfigPath, fileContent, 0666); err != nil {
 				logWarningInitSettings(err.Error())

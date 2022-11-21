@@ -1,6 +1,10 @@
 package RSL_Setting
 
-var ConfigPath = "./RSL_Config.json"
+var ConfigName = "RSL_Config.json"
+
+var ConfigFolder = "./.config/"
+
+var ConfigPath = ConfigFolder + ConfigName
 
 var AutoLog = true
 

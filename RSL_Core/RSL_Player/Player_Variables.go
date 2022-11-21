@@ -1,9 +1,7 @@
 package RSL_Player
 
-var Players = Users{
-	Info: nil,
-}
-
-func a() {
-
-}
+var Players = ""
+var ConfigName = ""
+var ConfigFolder = "./.players/"
+var ConfigPath = ConfigFolder + ConfigName
+var LogObj = "Players: "
