@@ -7,7 +7,7 @@
 * A logging package based on Zap secondary encapsulation.
 * It is mainly used for the development of RedStone Launcher, as well as other applications.
 
-#### Latest Version: [v0.1.0_beta](#latest-version-100_beta)
+#### Latest Version: [v1.0.0_beta](#latest-version-100_beta)
 
 > 中文文档见 [RSL_Log 中文文档](README.md)
 
@@ -27,6 +27,11 @@
     - [OutPut](#output)
 
 ## Functions
+
+> Prompt: Although the function will return an error, the internal error of the log package will be printed automatically, and it is unnecessary to capture it again \
+> (Of course, if necessary, capture it.)
+
+
 ### File Operations
 * InitLauncherLogger()
 > Called before **any log operation**. \
@@ -50,7 +55,11 @@
 * PrintDebug(format string, args ...interface{})
 * PrintWarning(format string, args ...interface{})
 * PrintError(format string, args ...interface{})
-
+### Others
+> Print Log Package Version
+* RSL_Log.LogVersion()
+> Get Log Package Version
+* RSL_Log.GetVersion()
 
 
 ## Variables
@@ -69,22 +78,19 @@
 ```
 package main
 
-import "RedStoneLauncher/RSL_Log"
+import "github.com/TimeOoout/RSL_Log"
 
 func main() {
 	RSL_Log.InitLauncherLogger()
-	a := RSL_Log.ClearLogs()
-	if a != nil {
-		println(a.Error())
-	}
-	RSL_Log.GetVersion()
+	RSL_Log.LogVersion()
+	RSL_Log.ClearLogs()
 }
 
 ```
 ### OutPut
 ```
 ...
-[INFO] Year-Month-Date_Hour-Min-Sec | Init Logger successfully! 
-[INFO] Year-Month-Date_Hour-Min-Sec | RSL_Log version:[1.0.0_beta]
-
+[INFO] 2023-01-07_21-34-40 | Log    : Init Logger successfully!
+[INFO] 2023-01-07_21-34-40 | Log    : RSL_Log version:  [v1.0.0_beta]
+[INFO] 2023-01-07_21-34-40 | Log    : Logs cleared successfully!   
 ```

@@ -10,5 +10,5 @@ var LauncherLogger *zap.Logger
 var LogFile *os.File
 var LogtoConsole = true
 var inited = false
-var version = "v0.1.0_beta"
+var version = "v1.0.0_beta"
 var LogObj = "Log    : "

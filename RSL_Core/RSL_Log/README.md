@@ -9,7 +9,7 @@
 
 > 当然也可以用于开发其它应用。
 
-#### 最新版本: [v0.1.0_beta](#latest-version-100_beta)
+#### 最新版本: [v1.0.0_beta](#latest-version-100_beta)
 
 > For English documents, see [RSL_ Log Package Documentation](README_EN.md)
 
@@ -29,12 +29,17 @@
     - [输出](#输出)
 
 ## 函数
+
+> 提示：函数虽然会返回错误，但日志包的内部错误均会自行打印，无需再次捕捉 \
+> （当然有需要的话捕捉未尝不可）
+
 ### 文件操作
 * InitLauncherLogger()
 > 在 **任何其它日志操作前**调用. \
 > 只有当 **初始化成功**后其它日志操作才能被执行.
 * ClearLogs() error
 > 将除了最新三个日志文件外的其它日志文件（日志文件夹内以".log"结尾的文件）**全部删除**.
+
 ### 日志操作
 > 输入的字符串将会以**不同的等级**被记录到日志中去.\
 > (如果初始化成功的话)\
@@ -44,6 +49,7 @@
 * LogDebug(format string, args ...interface{})
 * LogWarning(format string, args ...interface{})
 * LogError(format string, args ...interface{})
+
 ### 输出操作
 > 将输入的数据输出到控制台.\
 > 它可以 **在未初始化的情况下**被调用.
@@ -52,6 +58,11 @@
 * PrintWarning(format string, args ...interface{})
 * PrintError(format string, args ...interface{})
 
+### 其它
+> 打印日志包版本
+* RSL_Log.LogVersion()
+> 获取日志包版本
+* RSL_Log.GetVersion()
 
 
 ## 变量
@@ -70,22 +81,19 @@
 ```
 package main
 
-import "RedStoneLauncher/RSL_Log"
+import "github.com/TimeOoout/RSL_Log"
 
 func main() {
 	RSL_Log.InitLauncherLogger()
-	a := RSL_Log.ClearLogs()
-	if a != nil {
-		println(a.Error())
-	}
-	RSL_Log.GetVersion()
+	RSL_Log.LogVersion()
+	RSL_Log.ClearLogs()
 }
 
 ```
 ### 输出
 ```
 ...
-[INFO] Year-Month-Date_Hour-Min-Sec | Init Logger successfully! 
-[INFO] Year-Month-Date_Hour-Min-Sec | RSL_Log version:[1.0.0_beta]
-
+[INFO] 2023-01-07_21-34-40 | Log    : Init Logger successfully!
+[INFO] 2023-01-07_21-34-40 | Log    : RSL_Log version:  [v1.0.0_beta]
+[INFO] 2023-01-07_21-34-40 | Log    : Logs cleared successfully!   
 ```

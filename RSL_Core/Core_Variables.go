@@ -1,5 +1,5 @@
 package RSL_Core
 
 var LogObj = "Core   : "
-var Version = "1.0.0_Alpha"
+var Version = "v0.1.0_Alpha"
 var AutoClearLogs = true
